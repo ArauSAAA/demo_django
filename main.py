@@ -2,10 +2,25 @@ import flet as ft
 
 def main(page: ft.Page):
     
-    boton = ft.Button(text="Click Me")
+    def sumar(e):
+        numero = int(number.value)
+        number.value = str(numero + 1)
+        number.update()
 
-    page.add(ft.Text("Hello, World!"),
-             boton)
+    def restar(e):
+        numero = int(number.value)
+        number.value = str(numero - 1)
+        number.update()
+
+    boton_sumar = ft.IconButton(icon=ft.Icons.ADD, on_click=sumar)
+    boton_restar = ft.IconButton(icon=ft.Icons.REMOVE, on_click=restar)
+    number = ft.TextField(label="Number", value="0")
+
+    page.add(ft.Row([
+             boton_sumar,
+             number,
+             boton_restar,
+         ]))
 
 
 ft.app(target=main)
