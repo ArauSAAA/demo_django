@@ -15,11 +15,13 @@ def main(page: ft.Page):
     boton_sumar = ft.IconButton(icon=ft.Icons.ADD, on_click=sumar)
     boton_restar = ft.IconButton(icon=ft.Icons.REMOVE, on_click=restar)
     number = ft.TextField(label="Number", value="0")
+    texto = ft.Text("Contador")
 
     page.add(ft.Row([
              boton_sumar,
              number,
              boton_restar,
+             texto
          ]))
 
 
